@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-import cv2, time
+# import cv2, time
 # import face_recognition
 
 # # Create your views here.

@@ -1,0 +1,217 @@
+body{
+font-family: 'Noto Sans KR', sans-serif;
+background: #fdf9f8
+}
+
+
+.shadowed {
+    -webkit-filter: drop-shadow(12px 12px 5px rgba(0,0,0,0.9));
+    filter: drop-shadow(12px 12px 5px rgba(0,0,0,0.9)) ;
+
+    
+}
+
+.github a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.modal-body{
+    display: grid;
+    grid-template-areas: "area area area"
+    "area area area"
+    "area area area";
+}
+.modal-btn{
+    background-color: black;
+    color: white;
+    transition: ease 0.2s;
+}
+.modal-btn:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* ==== BUBBLES ======*/
+.bubbles {
+	position: fixed;
+	width: 100%;
+	height: 4000px;
+	z-index: -1;
+	overflow: hidden;
+	bottom: 0;
+	left: 0;
+}
+/* HERE  */
+.bubble {
+	position: absolute;
+	bottom: 0;
+	width: 2rem;
+	height: 2rem;
+	color: var(--primary-color);
+	border-radius: 50%;
+	opacity: 0.9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: flying 40s infinite ease-in;
+}
+.bubble:nth-child(1) {
+	color: var(--background-black);
+	background-color: var(--primary-color);
+	left: 10%;
+	animation-duration: 35s;
+	animation-delay: 1s;
+}
+.bubble:nth-child(2) {
+	color: var(--primary-color);
+	background-color: var(--background-black);
+	left: 20%;
+	animation-duration: 50s;
+	animation-delay: 4s;
+}
+.bubble:nth-child(3) {
+	background-color: var(--primary-color);
+	color: var(--background-black);
+	left: 35%;
+	animation-duration: 25s;
+	animation-delay: 2s;
+}
+.bubble:nth-child(4) {
+	color: var(--primary-color);
+	background-color: var(--background-black);
+	left: 40%;
+	animation-duration: 30s;
+	animation-delay: 10s;
+}
+.bubble:nth-child(5) {
+	background-color: var(--primary-color);
+	color: var(--background-black);
+	left: 45%;
+	animation-duration: 15s;
+	animation-delay: 4s;
+}
+.bubble:nth-child(6) {
+	background-color: var(--primary-color);
+	color: var(--background-black);
+	left: 55%;
+	animation-duration: 14s;
+	animation-delay: 6s;
+}
+.bubble:nth-child(7) {
+	color: var(--text-grey);
+
+	background-color: var(--background-black);
+	left: 65%;
+	animation-duration: 18s;
+	animation-delay: 1s;
+}
+.bubble:nth-child(8) {
+	background-color: var(--primary-color);
+	color: var(--background-black);
+	left: 75%;
+	animation-duration: 20s;
+	animation-delay: 2s;
+}
+.bubble:nth-child(9) {
+	color: var(--primary-color);
+	background-color: var(--background-black);
+	left: 90%;
+	animation-duration: 15s;
+	animation-delay: 1s;
+}
+
+@keyframes flying {
+	0% {
+		bottom: -100px;
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(100px);
+	}
+	100% {
+		bottom: 3500px;
+		transform: translateX(-200px);
+	}
+}
+
+
+#overlay{
+	height:100%;
+	width:100%;
+	background:white;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index: 99999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	}
+.loader {
+    width: 16em;
+    height: 8em;
+    position: fixed;
+	overflow: hidden;
+	
+}
+
+.loader::before,
+.loader::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+}
+
+.loader::before {
+    width: inherit;
+    height: 0.2em;
+    background-color: black;
+}
+
+.loader::after {
+    box-sizing: border-box;
+    width: 50%;
+    height: inherit;
+    border: 0.2em solid black;
+    border-radius: 50%;
+    left: 25%;
+}
+
+.loader span {
+    position: absolute;
+    width: 5%;
+    height: 10%;
+    background-color: black;
+    border-radius: 50%;
+    bottom: 0.2em;
+    left: -5%;
+    animation: 2s linear infinite;
+    transform-origin: 50% -3em;
+    animation-name: run, rotating;
+}
+
+.loader span:nth-child(2) {animation-delay: 0.075s;}
+.loader span:nth-child(3) {animation-delay: 0.15s;}
+
+@keyframes run {
+    0% {left: -5%;}
+    10%, 60% {left: calc((100% - 5%) / 2);}
+    70%, 100% {left: 100%;}
+}
+
+@keyframes rotating {
+    0%, 10% {transform: rotate(0deg);}
+    60%, 100% {transform: rotate(-1turn);}
+}

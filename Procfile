@@ -1,1 +1,1 @@
-web: gunicorn houseverify.wsgi --log-file -
+web: gunicorn shadey.wsgi --log-file -
